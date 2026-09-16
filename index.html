@@ -4,201 +4,634 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>f5ve ♡ discontinued</title>
+<title>F5VE GAMES</title>
 
 <style>
-* {
-  box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
 }
 
-html,
-body {
-  margin: 0;
-  min-height: 100%;
+:root{
+  --pink:#ff75c8;
+  --pink2:#ffb9e6;
+  --purple:#9b7cff;
+  --blue:#79cfff;
+  --white:#fff;
+  --glass:rgba(255,255,255,.72);
+  --line:rgba(255,255,255,.85);
+  --text:#573b61;
+  --shadow:0 18px 50px rgba(128,73,130,.16);
 }
 
-body {
-  min-height: 100vh;
-  overflow: hidden;
-  font-family: Arial, Helvetica, sans-serif;
-  color: #5c315d;
+body{
+  min-height:100vh;
+  font-family:Nunito,sans-serif;
+  color:var(--text);
   background:
-    radial-gradient(circle at 20% 15%, rgba(255,255,255,.95), transparent 25%),
-    radial-gradient(circle at 85% 20%, rgba(255,190,235,.8), transparent 30%),
-    radial-gradient(circle at 50% 100%, rgba(190,220,255,.8), transparent 35%),
-    linear-gradient(135deg, #ffe8f8, #f5dcff 45%, #dceeff);
+    radial-gradient(circle at 10% 10%,rgba(255,255,255,.95),transparent 25%),
+    radial-gradient(circle at 90% 10%,rgba(255,190,230,.75),transparent 30%),
+    radial-gradient(circle at 50% 100%,rgba(180,210,255,.7),transparent 35%),
+    linear-gradient(135deg,#ffd7f1,#dcd0ff 48%,#c9ecff);
+  overflow-x:hidden;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
+body:before{
+  content:"";
+  position:fixed;
+  inset:0;
+  pointer-events:none;
   background:
-    radial-gradient(circle at 10% 80%, rgba(255,255,255,.7) 0 2px, transparent 3px),
-    radial-gradient(circle at 80% 70%, rgba(255,255,255,.8) 0 2px, transparent 3px),
-    radial-gradient(circle at 65% 15%, rgba(255,255,255,.7) 0 3px, transparent 4px);
-  background-size: 130px 130px, 180px 180px, 220px 220px;
+    radial-gradient(circle at 20% 30%,rgba(255,255,255,.55) 0 2px,transparent 3px),
+    radial-gradient(circle at 80% 70%,rgba(255,255,255,.45) 0 2px,transparent 3px);
+  background-size:80px 80px,120px 120px;
+  opacity:.7;
 }
 
-.page {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 25px;
+/* HEADER */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:50;
+  padding:18px 24px;
+  background:rgba(255,255,255,.55);
+  backdrop-filter:blur(22px);
+  border-bottom:1px solid rgba(255,255,255,.8);
+  box-shadow:0 8px 30px rgba(100,70,130,.08);
 }
 
-.card {
-  width: min(680px, 100%);
-  padding: 55px 35px;
-  text-align: center;
-
-  background: rgba(255,255,255,.48);
-  border: 2px solid rgba(255,255,255,.8);
-  border-radius: 38px;
-
-  box-shadow:
-    0 25px 70px rgba(137, 91, 160, .22),
-    inset 0 2px 0 rgba(255,255,255,.95),
-    inset 0 -8px 25px rgba(255,190,240,.18);
-
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+.header-inner{
+  max-width:1400px;
+  margin:auto;
+  display:flex;
+  align-items:center;
+  gap:20px;
 }
 
-.logo {
-  display: inline-block;
-  margin-bottom: 20px;
-  padding: 12px 24px;
-
-  border-radius: 999px;
-  background: linear-gradient(
-    180deg,
-    rgba(255,255,255,.95),
-    rgba(255,210,242,.65)
-  );
-
-  border: 1px solid rgba(255,255,255,.95);
-
-  box-shadow:
-    0 8px 25px rgba(176,105,170,.2),
-    inset 0 2px 4px white;
-
-  font-size: 18px;
-  font-weight: 900;
-  letter-spacing: 4px;
-  color: #bd62ad;
-  text-transform: lowercase;
+.logo{
+  min-width:max-content;
+  font-size:27px;
+  font-weight:900;
+  letter-spacing:-1.5px;
+  color:#fff;
+  text-shadow:
+    0 2px 0 #d47ab4,
+    0 5px 14px rgba(255,90,190,.4);
 }
 
-.heart {
-  font-size: 45px;
-  margin: 5px 0 18px;
-  filter: drop-shadow(0 5px 8px rgba(194,92,166,.2));
-  animation: float 3s ease-in-out infinite;
+.logo span{
+  color:#9c7dff;
 }
 
-h1 {
-  margin: 0 auto 18px;
-  max-width: 580px;
-
-  font-size: clamp(30px, 6vw, 55px);
-  line-height: 1.05;
-  letter-spacing: -2px;
-
-  background: linear-gradient(
-    180deg,
-    #d46fc3,
-    #8f65c7
-  );
-
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-
-  text-shadow: 0 8px 20px rgba(164,91,176,.15);
+.search{
+  flex:1;
+  position:relative;
 }
 
-.message {
-  margin: 0 auto;
-  max-width: 520px;
-
-  font-size: 17px;
-  line-height: 1.7;
-  font-weight: 600;
-
-  color: rgba(92,49,93,.72);
+.search input{
+  width:100%;
+  height:48px;
+  border:1px solid rgba(255,255,255,.95);
+  background:rgba(255,255,255,.7);
+  border-radius:18px;
+  outline:none;
+  padding:0 18px 0 48px;
+  font:700 14px Nunito;
+  color:var(--text);
+  box-shadow:inset 0 2px 8px rgba(120,70,140,.05);
 }
 
-.sparkles {
-  margin-top: 30px;
-  font-size: 25px;
-  letter-spacing: 12px;
-  color: #d477c6;
-  animation: sparkle 2.5s ease-in-out infinite;
+.search input:focus{
+  box-shadow:0 0 0 3px rgba(255,117,200,.18);
 }
 
-.badge {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 10px 18px;
-
-  border-radius: 999px;
-
-  background: rgba(255,255,255,.58);
-  border: 1px solid rgba(255,255,255,.9);
-
-  box-shadow:
-    inset 0 2px 5px rgba(255,255,255,.9),
-    0 8px 20px rgba(150,100,170,.12);
-
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-
-  color: #a65da4;
+.search-icon{
+  position:absolute;
+  left:17px;
+  top:50%;
+  transform:translateY(-50%);
+  width:19px;
+  height:19px;
+  color:#b17ab1;
 }
 
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotate(-3deg);
+.header-btn{
+  height:44px;
+  padding:0 16px;
+  border:1px solid white;
+  background:rgba(255,255,255,.65);
+  border-radius:15px;
+  color:#805b85;
+  font:800 12px Nunito;
+  cursor:pointer;
+  box-shadow:0 6px 18px rgba(110,70,120,.08);
+  transition:.2s;
+}
+
+.header-btn:hover{
+  transform:translateY(-2px);
+  background:white;
+}
+
+/* HERO */
+
+.hero{
+  max-width:1400px;
+  margin:32px auto 22px;
+  padding:0 24px;
+}
+
+.hero-card{
+  position:relative;
+  overflow:hidden;
+  min-height:245px;
+  border-radius:30px;
+  border:1px solid white;
+  background:
+    linear-gradient(135deg,rgba(255,255,255,.82),rgba(255,213,242,.65)),
+    linear-gradient(120deg,#ffacd9,#bba8ff);
+  box-shadow:var(--shadow);
+  padding:38px;
+}
+
+.hero-card:before,
+.hero-card:after{
+  content:"";
+  position:absolute;
+  border-radius:50%;
+  filter:blur(1px);
+}
+
+.hero-card:before{
+  width:230px;
+  height:230px;
+  right:-30px;
+  top:-100px;
+  background:rgba(255,255,255,.38);
+}
+
+.hero-card:after{
+  width:150px;
+  height:150px;
+  right:160px;
+  bottom:-100px;
+  background:rgba(255,255,255,.25);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:680px;
+}
+
+.hero-kicker{
+  display:inline-block;
+  padding:7px 12px;
+  border-radius:999px;
+  background:rgba(255,255,255,.72);
+  font-size:11px;
+  font-weight:900;
+  letter-spacing:1.5px;
+  color:#9a6da0;
+  margin-bottom:14px;
+}
+
+.hero h1{
+  font-size:clamp(38px,6vw,68px);
+  line-height:.92;
+  letter-spacing:-4px;
+  color:white;
+  text-shadow:
+    0 3px 0 #db82bd,
+    0 9px 20px rgba(157,82,142,.22);
+}
+
+.hero p{
+  margin-top:17px;
+  font-size:15px;
+  font-weight:700;
+  color:#75567d;
+  max-width:560px;
+}
+
+/* CATEGORY BAR */
+
+.categories{
+  max-width:1400px;
+  margin:0 auto 22px;
+  padding:0 24px;
+}
+
+.category-scroll{
+  display:flex;
+  gap:9px;
+  overflow-x:auto;
+  padding-bottom:5px;
+  scrollbar-width:none;
+}
+
+.category-scroll::-webkit-scrollbar{
+  display:none;
+}
+
+.category{
+  flex:none;
+  border:1px solid white;
+  background:rgba(255,255,255,.58);
+  color:#795b82;
+  padding:10px 16px;
+  border-radius:999px;
+  cursor:pointer;
+  font:800 12px Nunito;
+  transition:.2s;
+}
+
+.category:hover,
+.category.active{
+  background:white;
+  color:#e15cae;
+  transform:translateY(-2px);
+  box-shadow:0 8px 20px rgba(100,70,130,.1);
+}
+
+/* MAIN */
+
+.main{
+  max-width:1400px;
+  margin:auto;
+  padding:0 24px 50px;
+}
+
+.section-title{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin:25px 0 14px;
+}
+
+.section-title h2{
+  font-size:21px;
+  font-weight:900;
+  color:#69496f;
+}
+
+.section-title span{
+  font-size:11px;
+  font-weight:800;
+  color:#9b7ca0;
+}
+
+/* GAME GRID */
+
+.games{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(190px,1fr));
+  gap:16px;
+}
+
+.game-card{
+  position:relative;
+  border:1px solid white;
+  border-radius:23px;
+  padding:11px;
+  background:rgba(255,255,255,.64);
+  backdrop-filter:blur(16px);
+  box-shadow:0 10px 30px rgba(95,65,120,.09);
+  cursor:pointer;
+  transition:.22s;
+  overflow:hidden;
+}
+
+.game-card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 18px 40px rgba(100,65,125,.15);
+}
+
+.game-cover{
+  position:relative;
+  height:145px;
+  border-radius:17px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.game-card:nth-child(4n+1) .game-cover{
+  background:linear-gradient(135deg,#ffc4e7,#bca8ff);
+}
+
+.game-card:nth-child(4n+2) .game-cover{
+  background:linear-gradient(135deg,#aee8ff,#c5b7ff);
+}
+
+.game-card:nth-child(4n+3) .game-cover{
+  background:linear-gradient(135deg,#ffe2a7,#ffb7d9);
+}
+
+.game-card:nth-child(4n) .game-cover{
+  background:linear-gradient(135deg,#b9ffd9,#a8dfff);
+}
+
+.game-cover:after{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:linear-gradient(125deg,rgba(255,255,255,.42),transparent 42%);
+  pointer-events:none;
+}
+
+.game-icon{
+  width:76px;
+  height:76px;
+  position:relative;
+  z-index:2;
+  filter:drop-shadow(0 9px 8px rgba(90,60,100,.18));
+}
+
+.game-info{
+  padding:11px 4px 4px;
+}
+
+.game-name{
+  font-size:14px;
+  font-weight:900;
+  color:#614766;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}
+
+.game-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:5px;
+  font-size:10px;
+  font-weight:800;
+  color:#9a7ba0;
+}
+
+.play-pill{
+  padding:4px 8px;
+  border-radius:999px;
+  background:rgba(255,255,255,.78);
+  color:#d25ca9;
+}
+
+.favorite{
+  position:absolute;
+  top:18px;
+  right:18px;
+  width:32px;
+  height:32px;
+  border:1px solid rgba(255,255,255,.9);
+  border-radius:50%;
+  background:rgba(255,255,255,.7);
+  cursor:pointer;
+  z-index:5;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.favorite svg{
+  width:16px;
+  height:16px;
+  fill:none;
+  stroke:#ad7ba8;
+  stroke-width:2;
+}
+
+.favorite.active svg{
+  fill:#ff67bb;
+  stroke:#ff67bb;
+}
+
+/* EMPTY */
+
+.empty{
+  display:none;
+  padding:50px;
+  text-align:center;
+  border-radius:25px;
+  background:rgba(255,255,255,.58);
+  border:1px solid white;
+  font-weight:800;
+}
+
+/* GAME MODAL */
+
+.modal{
+  position:fixed;
+  inset:0;
+  z-index:100;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:rgba(56,32,67,.72);
+  backdrop-filter:blur(12px);
+}
+
+.modal.open{
+  display:flex;
+}
+
+.game-window{
+  width:min(1200px,96vw);
+  height:min(850px,94vh);
+  display:flex;
+  flex-direction:column;
+  overflow:hidden;
+  background:#fdf9ff;
+  border:1px solid white;
+  border-radius:25px;
+  box-shadow:0 30px 90px rgba(30,15,40,.35);
+}
+
+.game-window-head{
+  flex:none;
+  min-height:62px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  padding:10px 14px;
+  background:rgba(255,255,255,.9);
+  border-bottom:1px solid #f0e4f1;
+}
+
+.modal-title{
+  flex:1;
+  font-size:16px;
+  font-weight:900;
+  color:#68486f;
+}
+
+.window-btn{
+  border:1px solid #ead9ec;
+  background:white;
+  border-radius:12px;
+  padding:9px 12px;
+  font:800 11px Nunito;
+  color:#785b7d;
+  cursor:pointer;
+}
+
+.window-btn:hover{
+  background:#fff0fa;
+}
+
+.game-frame-wrap{
+  flex:1;
+  min-height:0;
+  position:relative;
+  background:#16121a;
+}
+
+#gameFrame{
+  width:100%;
+  height:100%;
+  border:0;
+  display:block;
+}
+
+.frame-loading{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background:linear-gradient(135deg,#fff0fa,#ece7ff);
+  z-index:2;
+  pointer-events:none;
+  transition:.3s;
+}
+
+.frame-loading.hidden{
+  opacity:0;
+}
+
+.loader{
+  width:48px;
+  height:48px;
+  border:5px solid rgba(255,255,255,.7);
+  border-top-color:#ff72c3;
+  border-radius:50%;
+  animation:spin .8s linear infinite;
+}
+
+@keyframes spin{
+  to{transform:rotate(360deg)}
+}
+
+.frame-loading strong{
+  margin-top:13px;
+  font-size:13px;
+}
+
+.frame-loading small{
+  margin-top:4px;
+  opacity:.65;
+  font-weight:700;
+}
+
+.fallback{
+  position:absolute;
+  left:50%;
+  bottom:18px;
+  transform:translateX(-50%);
+  z-index:4;
+  display:flex;
+  gap:8px;
+  align-items:center;
+  padding:8px;
+  border-radius:15px;
+  background:rgba(255,255,255,.9);
+  box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+.fallback button{
+  border:0;
+  border-radius:10px;
+  background:#ff72c3;
+  color:white;
+  padding:9px 14px;
+  font:900 11px Nunito;
+  cursor:pointer;
+}
+
+/* FOOTER */
+
+footer{
+  text-align:center;
+  padding:20px;
+  font-size:11px;
+  font-weight:700;
+  color:#95779b;
+}
+
+@media(max-width:650px){
+  header{
+    padding:13px;
   }
 
-  50% {
-    transform: translateY(-8px) rotate(3deg);
-  }
-}
-
-@keyframes sparkle {
-  0%, 100% {
-    opacity: .55;
-    transform: scale(.98);
+  .header-inner{
+    gap:8px;
   }
 
-  50% {
-    opacity: 1;
-    transform: scale(1.04);
-  }
-}
-
-@media (max-width: 600px) {
-  .card {
-    padding: 42px 23px;
-    border-radius: 30px;
+  .logo{
+    font-size:21px;
   }
 
-  .message {
-    font-size: 15px;
+  .header-btn{
+    display:none;
   }
 
-  .heart {
-    font-size: 38px;
+  .hero{
+    padding:0 13px;
+    margin-top:18px;
   }
 
-  .sparkles {
-    letter-spacing: 7px;
+  .hero-card{
+    padding:27px;
+    min-height:220px;
+  }
+
+  .hero h1{
+    font-size:44px;
+  }
+
+  .main,
+  .categories{
+    padding-left:13px;
+    padding-right:13px;
+  }
+
+  .games{
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+  }
+
+  .game-cover{
+    height:120px;
+  }
+
+  .game-icon{
+    width:62px;
+    height:62px;
+  }
+
+  .game-window{
+    width:100%;
+    height:96vh;
+    border-radius:17px;
   }
 }
 </style>
@@ -206,32 +639,223 @@ h1 {
 
 <body>
 
-<main class="page">
-  <section class="card">
+<header>
+  <div class="header-inner">
 
-    <div class="logo">f5ve ♡</div>
-
-    <div class="heart">♡</div>
-
-    <h1>
-      Discontinued
-    </h1>
-
-    <p class="message">
-      but we'll be back soon with a new concept and website.
-    </p>
-
-    <div class="sparkles">
-      ✦ ✧ ⋆ ✧ ✦
+    <div class="logo">
+      F5VE<span>GAMES</span>
     </div>
 
-    <div class="badge">
-      see you soon ♡
+    <div class="search">
+      <svg class="search-icon" viewBox="0 0 24 24">
+        <circle cx="11" cy="11" r="7"></circle>
+        <path d="m16.5 16.5 5 5"></path>
+      </svg>
+      <input id="searchInput" placeholder="Search games..." autocomplete="off">
     </div>
 
-  </section>
+    <button class="header-btn" onclick="showFavorites()">
+      FAVORITES
+    </button>
+
+  </div>
+</header>
+
+
+<section class="hero">
+  <div class="hero-card">
+
+    <div class="hero-content">
+
+      <div class="hero-kicker">
+        F5VE ARCADE
+      </div>
+
+      <h1>
+        PLAY.<br>
+        HAVE FUN.
+      </h1>
+
+      <p>
+        A glossy little corner of the internet for browser games.
+        Pick a game and start playing instantly.
+      </p>
+
+    </div>
+
+  </div>
+</section>
+
+
+<section class="categories">
+
+  <div class="category-scroll">
+
+    <button class="category active" data-category="all">
+      ALL GAMES
+    </button>
+
+    <button class="category" data-category="arcade">
+      ARCADE
+    </button>
+
+    <button class="category" data-category="puzzle">
+      PUZZLE
+    </button>
+
+    <button class="category" data-category="sports">
+      SPORTS
+    </button>
+
+    <button class="category" data-category="racing">
+      RACING
+    </button>
+
+    <button class="category" data-category="action">
+      ACTION
+    </button>
+
+    <button class="category" data-category="casual">
+      CASUAL
+    </button>
+
+    <button class="category" data-category="favorites">
+      FAVORITES
+    </button>
+
+  </div>
+
+</section>
+
+
+<main class="main">
+
+  <div class="section-title">
+    <h2 id="sectionTitle">ALL GAMES</h2>
+    <span id="gameCount"></span>
+  </div>
+
+  <div class="games" id="gamesGrid"></div>
+
+  <div class="empty" id="empty">
+    No games found.
+  </div>
+
 </main>
 
-</body>
-</html>
+
+<footer>
+  F5VE GAMES · browser games powered by third-party HTML5 game hosts
+</footer>
+
+
+<!-- GAME MODAL -->
+
+<div class="modal" id="gameModal">
+
+  <div class="game-window">
+
+    <div class="game-window-head">
+
+      <div class="modal-title" id="modalTitle">
+        Game
+      </div>
+
+      <button class="window-btn" onclick="openExternal()">
+        OPEN GAME
+      </button>
+
+      <button class="window-btn" onclick="fullscreenGame()">
+        FULLSCREEN
+      </button>
+
+      <button class="window-btn" onclick="closeGame()">
+        CLOSE
+      </button>
+
+    </div>
+
+    <div class="game-frame-wrap">
+
+      <div class="frame-loading" id="loading">
+
+        <div class="loader"></div>
+
+        <strong>Loading game...</strong>
+
+        <small>Give it a second ✦</small>
+
+      </div>
+
+      <iframe
+        id="gameFrame"
+        allow="autoplay; fullscreen; gamepad; clipboard-read; clipboard-write"
+        allowfullscreen
+        loading="eager">
+      </iframe>
+
+      <div class="fallback">
+
+        <span style="font-size:10px;font-weight:800;color:#76577c">
+          If the game doesn't load:
+        </span>
+
+        <button onclick="openExternal()">
+          OPEN DIRECTLY
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   GAME DATABASE
+   =========================================================
+
+   These are direct HTML5 game embeds rather than iframe-ing
+   an entire game website.
+
+   You can add more games by copying one object.
+========================================================= */
+
+const games = [
+
+  {
+    id:"golf-orbit",
+    name:"Golf Orbit",
+    category:"sports",
+    icon:"golf",
+    description:"Launch the golf ball as far as possible.",
+    url:"https://www.madkidgames.com/full/golf-orbit-oneshot-golf-games"
+  },
+
+  {
+    id:"orbits",
+    name:"Orbits",
+    category:"puzzle",
+    icon:"orbit",
+    url:"https://html5.gamemonetize.co/5xftj8yfvsugshqyapc8rxsd2zvqqbgn/"
+  },
+
+  {
+    id:"dangerous-circles",
+    name:"Dangerous Circles",
+    category:"arcade",
+    icon:"circle",
+    url:"https://html5.gamemonetize.co/5zbdsoweazkozsihrlrfmczivxuomhbs/"
+  },
+
+  {
+    id:"dangerous-circle-2",
+    name:"Dangerous Circle 2",
+    category:"arcade",
+    icon:"circle2",
+    u
 ```
